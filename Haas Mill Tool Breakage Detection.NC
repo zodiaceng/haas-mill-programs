@@ -10,7 +10,7 @@ O08000 (Haas Tool Breakage Sub)
 (End User Inputs)
 
 G10 L20 P#5 G90 X#10585 Y#10586 Z#10582 (Set Work Offset for Tool Setter)
-T#3026 M6 (Send Spindle Home - Stop Spindle - Turn Off Coolant)
+G0 G53 Z0. (Send Spindle Home)
 G0 G90 G154 P98 X#3 Y#4 (Position Over Tool Setter XY)
 G65 P9855 (Turn On Tool Setter)
 G43 H#3026 Z.2 (Activate Tool Offset In Spindle - Position For Rough Tool Pullout Detection)
@@ -24,7 +24,7 @@ GOTO100 (Go To N100 Alarm)
 N20
 G1 Z-#2 F150. (Position For Tool Breakage Detection)
 M96 P200 Q17 (Alarm if Probe Signal Not Found - Breakage)
-T#3026 M6 (Send Spindle Home)
+G0 G53 Z0. (Send Spindle Home)
 G65 P9856 (Turn Off Tool Setter)
 G43 H#3026 (Activate Tool Offset In Spindle)
 G90 (Absolute Positioning)
@@ -38,8 +38,5 @@ N200
 
 (Revision History)
 (2023/11/16 KS Rev N/C - Initial Release)
-(2023/11/17 KS Rev A)
-(Changed G90 G53 Z0. to T#3026 M6 to stop the spindle, turn off coolant and orient simultaneously)
-(Added G90 before M99 to force Absolute Positioning regardless of condition within Renishaw/Haas subs)
 
 M30
