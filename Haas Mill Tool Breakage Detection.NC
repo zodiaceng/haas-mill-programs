@@ -1,5 +1,5 @@
 O08000 (Haas Tool Breakage Sub)
-(2023/11/17 KS)
+(2023/11/20 KS Rev A)
 
 (User Inputs)
 #1=.005 (Pull Out Sensitivity - Must Be Greater Than Length Wear Values)
@@ -11,7 +11,7 @@ O08000 (Haas Tool Breakage Sub)
 
 G10 L20 P#5 G90 X#10585 Y#10586 Z#10582 (Set Work Offset for Tool Setter)
 G0 G53 Z0. (Send Spindle Home)
-G0 G90 G154 P98 X#3 Y#4 (Position Over Tool Setter XY)
+G0 G90 G154 P#5 X#3 Y#4 (Position Over Tool Setter XY)
 G65 P9855 (Turn On Tool Setter)
 G43 H#3026 Z.2 (Activate Tool Offset In Spindle - Position For Rough Tool Pullout Detection)
 
@@ -38,5 +38,6 @@ N200
 
 (Revision History)
 (2023/11/17 KS Rev N/C - Initial Release)
+(2023/11/20 KS Rev A - Replaced hard coded WCS to match #5 variable)
 
 M30
