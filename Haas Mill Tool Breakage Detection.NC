@@ -38,6 +38,6 @@ N200
 
 (Revision History)
 (2023/11/17 KS Rev N/C - Initial Release)
-(2023/11/20 KS Rev A - Replaced hard coded WCS to match #5 variable)
+(2023/11/20 KS Rev A - Replaced hard coded WCS to use #5 variable)
 
 M30
